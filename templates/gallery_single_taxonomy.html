@@ -1,0 +1,43 @@
+
+<div class="region region-content">
+  <h1 class="js-quickedit-page-title page-header">{{ content.taxonomy.name}}</h1>
+
+  <div class="views-element-container form-group"><div class="view view-taxonomy-term view-id-taxonomy_term view-display-id-page_1 js-view-dom-id-da9b81228e84cecab97d0a2e67f33e53e9cb7438b623b8032d9477ab9c315b46">
+
+
+    <div class="view-header">
+      <div about="/vazlatok" typeof="schema:Thing">
+
+        <span property="schema:name" content="{{ content.taxonomy.name}}" class="hidden"></span>
+
+
+      </div>
+
+    </div>
+
+    <div class="view-content">
+      <div data-drupal-views-infinite-scroll-content-wrapper class="views-infinite-scroll-content-wrapper clearfix form-group">
+        <div  class="grid views-view-grid horizontal">
+          {% for imageId in config.extra.imageIdsByTaxonomyId[content.taxonomy.id] %}
+
+          {% set image = config.extra.imagesById[imageId] %}
+          <div class="row">
+            <div class="col col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <div class="views-field views-field-field-grafika-kep"><div class="field-content">  <a href="/nodes/{{ image.oldId }}"><img src="{{ image.image.url }}" width="650" height="650" alt="{{ image.alt }}" typeof="foaf:Image" class="img-responsive" />
+
+              </a>
+              </div></div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+
+
+</div>

@@ -52,32 +52,13 @@
         <nav role="navigation" aria-labelledby="block-bootstrap-ruszkai-main-menu-menu" id="block-bootstrap-ruszkai-main-menu">
           <h2 class="sr-only" id="block-bootstrap-ruszkai-main-menu-menu">Fő navigáció</h2>
 
-
           <ul class="menu nav navbar-nav">
+
+            {% for page in config.extra.pages %}
             <li>
-              <a href="/grafika" data-drupal-link-system-path="taxonomy/term/1">Grafika</a>
+              <a href="/{{ page.slug }}">{{ page.name }}</a>
             </li>
-            <li>
-              <a href="/illusztracio" data-drupal-link-system-path="taxonomy/term/2">Illusztráció</a>
-            </li>
-            <li>
-              <a href="/absztrakt" data-drupal-link-system-path="taxonomy/term/7">Absztrakt</a>
-            </li>
-            <li>
-              <a href="/vazlatok" data-drupal-link-system-path="taxonomy/term/5">Vázlatok</a>
-            </li>
-            <li>
-              <a href="/reklam" data-drupal-link-system-path="taxonomy/term/3">Reklám</a>
-            </li>
-            <li>
-              <a href="/humor" data-drupal-link-system-path="taxonomy/term/4">Humor</a>
-            </li>
-            <li>
-              <a href="/muralok" data-drupal-link-system-path="taxonomy/term/6">Murálok</a>
-            </li>
-            <li>
-              <a href="/animacio" data-drupal-link-system-path="taxonomy/term/8">Animáció</a>
-            </li>
+            {% endfor %}
             <li>
               <a href="/kapcsolat" data-drupal-link-system-path="node/17">Kapcsolat</a>
             </li>

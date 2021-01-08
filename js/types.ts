@@ -11,14 +11,38 @@ export type ImageAsset = {
   id: string;
 }
 
-export interface ImageResource {
+export type ImageResource = {
   alt: string;
   body: string;
   id: string;
   name: string;
   oldId: number | null;
-  taxonomy: Taxonomy;
+  taxonomy: TaxonomyWithPage;
   image: ImageAsset;
+}
+
+export type Page = {
+  slug: string;
+  name: string;
+  id: string;
+}
+
+type TaxonomyWithPage = Taxonomy & {
+  page: Page;
+};
+
+export type Gallery = {
+  id: string,
+  name: string,
+  taxonomy: Taxonomy | null,
+}
+
+export type PageWithContent = Page & {
+  content: Gallery[],
+}
+
+export type Menu = {
+  pages: Page[],
 }
 
 export interface Connection {

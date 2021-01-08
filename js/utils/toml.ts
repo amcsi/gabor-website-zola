@@ -1,7 +1,11 @@
-export function stringify(object: object) {
-  let ret = '';
-  for (const [key, value] of Object.entries(object)) {
-    ret += `${key} = ${JSON.stringify(value)}`;
-  }
-  return ret;
+import TOML, { JsonMap } from '@iarna/toml';
+
+type ContentConfiguration = {
+  title: string;
+  template: string;
+  extra?: JsonMap;
+}
+
+export function createPageContent(tomlConfiguration: ContentConfiguration, bodyContent: string) {
+  return ['+++', TOML.stringify(tomlConfiguration), '+++', bodyContent].join('\n')
 }
