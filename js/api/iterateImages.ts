@@ -25,6 +25,13 @@ export async function forEachImages(cb: (item: ImageResource) => void) {
           fileName
           width
           url
+          urlSmaller: url(
+            transformation: {
+              document: { output: { format: webp } }
+              image: { resize: { width: 650, height: 650, fit: crop } }
+              validateOptions: true
+            }
+          )
           id
         }
       }

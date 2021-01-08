@@ -28,6 +28,7 @@ mkdirSync(nodesDirectory);
     imagesById: {} as {[id: string]: ImageResource},
     imageIdsByTaxonomyId: {} as {[id: string]: string[]},
     allImageIds: [] as string[],
+    cloudinaryCloud: process.env.CLOUDINARY_CLOUD,
   };
 
   ///////////////

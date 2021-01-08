@@ -20,17 +20,28 @@
         <div  class="grid views-view-grid horizontal">
           {% for imageId in config.extra.imageIdsByTaxonomyId[content.taxonomy.id] %}
 
+          {% if loop.index0 % 4 == 0 %}
+            {% if loop.index0 != 0 %}
+              {# close previous div #}
+              </div>
+            {% endif %}
+            <div class="row">
+          {% endif %}
+
           {% set image = config.extra.imagesById[imageId] %}
-          <div class="row">
             <div class="col col-xs-6 col-sm-6 col-md-3 col-lg-3">
-              <div class="views-field views-field-field-grafika-kep"><div class="field-content">  <a href="/nodes/{{ image.oldId }}"><img src="{{ image.image.url }}" width="650" height="650" alt="{{ image.alt }}" typeof="foaf:Image" class="img-responsive" />
+              <div class="views-field views-field-field-grafika-kep"><div class="field-content">  <a href="/nodes/{{ image.oldId }}"><img loading="lazy" src="https://res.cloudinary.com/{{ config.extra.cloudinaryCloud }}/image/fetch/q_auto:low,w_650,h_650/{{ image.image.url }}" width="650" height="650" alt="{{ image.alt }}" typeof="foaf:Image" class="img-responsive" />
 
               </a>
               </div></div>
             </div>
-          </div>
+
+
           {% endfor %}
 
+
+            {# close row #}
+            </div>
         </div>
       </div>
 

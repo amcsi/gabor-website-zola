@@ -8,6 +8,7 @@ export type ImageAsset = {
   fileName: string;
   width: number;
   url: string;
+  urlSmaller: string;
   id: string;
 }
 
