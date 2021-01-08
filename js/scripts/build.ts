@@ -1,3 +1,7 @@
 import { forEachImages } from '../api/iterateImages';
 
-forEachImages(() => {});
+let count = 0;
+
+forEachImages((imageResource) => {
+  console.info(++count);
+});

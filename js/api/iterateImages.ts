@@ -1,12 +1,12 @@
-import { ImageAsset, ImageResource, ResponseEnvelope } from '../types';
+import { Connection, ImageResource } from '../types';
 import api from './index';
+import { AxiosResponse } from 'axios';
 
-export async function forEachImages(cb: (item: ImageAsset) => void) {
-  const result = await api.get<ResponseEnvelope<{ image: ImageResource }>>('', {
-    params: {
-      query: `
+function getQuery(after?: string) {
+  const query = after ? `(after: ${JSON.stringify(after)})` : '';
+  return `
         query GetAllImages {
-          images {
+          images${query} {
             alt
             body
             id
@@ -24,9 +24,28 @@ export async function forEachImages(cb: (item: ImageAsset) => void) {
               id
             }
           }
+          
+          imagesConnection${query} {
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+          }
         }
-      `
+      `;
+}
+
+export async function forEachImages(cb: (item: ImageResource) => void) {
+  let response: AxiosResponse<AxiosResponse<{ images: ImageResource[], imagesConnection: Connection }>> | undefined;
+  do {
+    response = await api.get('', {
+      params: {
+        query: getQuery(response?.data.data.imagesConnection.pageInfo.endCursor),
+      }
+    });
+    for (const item of response.data.data.images) {
+      cb(item);
     }
-  });
-  console.info({data: result.data});
+
+  } while (response.data.data.imagesConnection.pageInfo.hasNextPage);
 }

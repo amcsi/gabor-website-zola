@@ -21,6 +21,13 @@ export interface ImageResource {
   image: ImageAsset;
 }
 
+export interface Connection {
+  pageInfo: {
+    hasNextPage: boolean,
+    endCursor: string,
+  },
+}
+
 export type ResponseEnvelope<T> = {
   data: T,
 }
