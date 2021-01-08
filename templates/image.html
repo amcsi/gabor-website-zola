@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <a id="main-content"></a>
+  <div class="region region-content">
+    <h1 class="js-quickedit-page-title page-header"><span>Lady portret</span>
+    </h1>
+
+    <article data-history-node-id="18" role="article" about="/node/18" class="grafika is-sticky full clearfix">
+
+
+
+
+
+      <div class="content">
+
+        <div class="finalimage field field--name-field-grafika-kep field--type-image field--label-hidden field--item">  <img src="{{ page.extra.image.url }}" width="{{ page.extra.image.width }}" height="{{ page.extra.image.height }}" alt="{{ page.extra.image.alt }}" typeof="foaf:Image" class="img-responsive" />
+
+        </div>
+
+        <div class="container field field--name-body field--type-text-with-summary field--label-hidden field--item">
+          {{ page.content | safe }}
+        </div>
+
+        <div class="field field--name-field-tipus- field--type-entity-reference field--label-above">
+          <div class="field--label">Címke</div>
+          <div class="field--item"><a href="/grafika" hreflang="hu">TAXONOMY</a></div>
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+{% endblock content %}

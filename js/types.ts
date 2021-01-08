@@ -1,9 +1,9 @@
-export interface Taxonomy {
+export type Taxonomy = {
   id: string;
   name: string;
 }
 
-export interface ImageAsset {
+export type ImageAsset = {
   height: number;
   fileName: string;
   width: number;
@@ -16,7 +16,7 @@ export interface ImageResource {
   body: string;
   id: string;
   name: string;
-  oldId: number;
+  oldId: number | null;
   taxonomy: Taxonomy;
   image: ImageAsset;
 }
