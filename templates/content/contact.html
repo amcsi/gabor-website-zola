@@ -1,0 +1,162 @@
+<section
+  class="contact-message-feedback-form contact-message-form contact-form container block block-contact-block clearfix"
+  data-user-info-from-browser
+  data-drupal-selector="contact-message-feedback-form"
+  id="block-contactblock"
+>
+
+  <h2 class="block-title">Vedd fel velem a kapcsolatot</h2>
+
+
+  <form
+    action="/kapcsolat"
+    method="post"
+    id="contact-message-feedback-form"
+    accept-charset="UTF-8"
+  >
+    <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-name js-form-item-name form-group">
+      <label for="edit-name" class="control-label js-form-required form-required">Saját
+        név</label>
+
+
+      <input
+        data-drupal-selector="edit-name"
+        class="form-text required form-control"
+        type="text"
+        id="edit-name"
+        name="name"
+        value=""
+        size="60"
+        maxlength="255"
+        required="required"
+        aria-required="true"
+      />
+
+
+    </div>
+    <div class="form-item js-form-item form-type-email js-form-type-email form-item-mail js-form-item-mail form-group">
+      <label for="edit-mail" class="control-label js-form-required form-required">E-mail
+        cím</label>
+
+
+      <input
+        data-drupal-selector="edit-mail"
+        class="form-email required form-control"
+        type="email"
+        id="edit-mail"
+        name="mail"
+        value=""
+        size="60"
+        maxlength="254"
+        required="required"
+        aria-required="true"
+      />
+
+
+    </div>
+    <div
+      class="field--type-string field--name-subject field--widget-string-textfield form-group js-form-wrapper form-wrapper"
+      data-drupal-selector="edit-subject-wrapper"
+      id="edit-subject-wrapper"
+    >
+      <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-subject-0-value js-form-item-subject-0-value form-group">
+        <label
+          for="edit-subject-0-value"
+          class="control-label js-form-required form-required"
+        >Tárgy</label>
+
+
+        <input
+          class="js-text-full text-full form-text required form-control"
+          data-drupal-selector="edit-subject-0-value"
+          type="text"
+          id="edit-subject-0-value"
+          name="subject[0][value]"
+          value=""
+          size="60"
+          maxlength="100"
+          placeholder=""
+          required="required"
+          aria-required="true"
+          title=""
+          data-toggle="tooltip"
+        />
+
+
+      </div>
+
+    </div>
+    <div
+      class="field--type-string-long field--name-message field--widget-string-textarea form-group js-form-wrapper form-wrapper"
+      data-drupal-selector="edit-message-wrapper"
+      id="edit-message-wrapper"
+    >
+      <div class="form-item js-form-item form-type-textarea js-form-type-textarea form-item-message-0-value js-form-item-message-0-value">
+        <label
+          for="edit-message-0-value"
+          class="control-label js-form-required form-required"
+        >Üzenet</label>
+
+
+        <div class="form-textarea-wrapper">
+                  <textarea
+                    class="js-text-full text-full form-textarea required form-control resize-vertical"
+                    data-drupal-selector="edit-message-0-value"
+                    title=""
+                    data-toggle="tooltip"
+                    id="edit-message-0-value"
+                    name="message[0][value]"
+                    rows="12"
+                    cols="60"
+                    placeholder=""
+                    required="required"
+                    aria-required="true"
+                  ></textarea>
+        </div>
+
+
+      </div>
+
+    </div>
+    <input
+      data-drupal-selector="form-0jwpx1c2yaadavbtppz3czhj5fm7t1gtujmxj2cnyaa"
+      type="hidden"
+      name="form_build_id"
+      value="form-0JWpX1c2YAAdAvBTpPZ3CzhJ5Fm7T1GtujMxJ2CNYaA"
+      id="form-0JWpX1c2YAAdAvBTpPZ3CzhJ5Fm7T1GtujMxJ2CNYaA"
+    /><input
+    data-drupal-selector="edit-contact-message-feedback-form"
+    type="hidden"
+    name="form_id"
+    value="contact_message_feedback_form"
+    id="edit-contact-message-feedback-form"
+  />
+    <div
+      data-drupal-selector="edit-actions"
+      class="form-actions form-group js-form-wrapper form-wrapper"
+      id="edit-actions"
+    >
+      <button
+        data-drupal-selector="edit-submit"
+        class="button button--primary js-form-submit form-submit btn-primary btn"
+        type="submit"
+        id="edit-submit"
+        name="op"
+        value="Üzenet küldése"
+      >Üzenet küldése
+      </button>
+      <button
+        data-drupal-selector="edit-preview"
+        class="button js-form-submit form-submit btn-default btn icon-before"
+        type="submit"
+        id="edit-preview"
+        name="op"
+        value="Előnézet"
+      ><span class="icon glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        Előnézet
+      </button>
+    </div>
+
+  </form>
+
+</section>

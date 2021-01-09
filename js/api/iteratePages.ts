@@ -22,6 +22,16 @@ export async function forEachPagesWithContent(cb: (item: PageWithContent) => voi
           ... on Asset {
             ${imageSelectables}
           }
+          ... on SpecialContent {
+            id
+            contentType
+          }
+          ... on Text {
+            id
+            richText {
+              html
+            }
+          }
         }
       }
     `,

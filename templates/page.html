@@ -15,6 +15,10 @@
 {% for content in page.extra.content %}
   {% if content.url %}
     {% include "content/content_image.html" %}
+  {% elif content.richText %}
+    {% include "content/text.html" %}
+  {% elif content.contentType %}
+    {% include "content/contact.html" %}
   {% else %}
     {% include "content/gallery.html" %}
   {% endif %}

@@ -11,6 +11,18 @@ export type Asset = {
   id: string;
 }
 
+export type SpecialContent = {
+  id: string;
+  contentType: 'contactForm';
+}
+
+export type Text = {
+  id: string;
+  richText: {
+    html: string;
+  };
+}
+
 export type ImageResource = {
   alt: string;
   body: string;
@@ -38,7 +50,7 @@ export type Gallery = {
 }
 
 export type PageWithContent = Page & {
-  content: (Gallery | Asset)[],
+  content: (Gallery | Asset | Text | SpecialContent)[],
 }
 
 export type Menu = {
