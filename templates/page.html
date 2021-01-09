@@ -4,6 +4,14 @@
 
 {# Different content types #}
 
+{#
+  Hack to get index page (section) to act as a page.
+  https://zola.discourse.group/t/how-to-have-text-not-list-of-posts-on-the-home-page/313/8?u=amcsi
+#}
+{% if page is undefined %}
+  {% set page = section %}
+{% endif %}
+
 {% for content in page.extra.content %}
   {% if content.url %}
     {% include "content/content_image.html" %}
