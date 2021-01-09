@@ -13,27 +13,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/old1.css" media="all" />
+  <link rel="stylesheet" href="{{ get_url(path='old1.css', cachebust=true) }}" media="all" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/bootswatch/3.3.6/paper/bootstrap.min.css" media="all" />
-  <link rel="stylesheet" href="/old2.css" media="all" />
-
-
-  <!--[if lte IE 8]>
-  <script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
-  <![endif]-->
-
+  <link rel="stylesheet" href="{{ get_url(path='old2.css', cachebust=true) }}" media="all" />
 </head>
 <body class="path-frontpage navbar-is-static-top has-glyphicons">
-<a href="#main-content" class="visually-hidden focusable skip-link">
-  Ugrás a tartalomra
-</a>
 
 <header class="navbar navbar-default navbar-static-top" id="navbar" role="banner">
   <div class="container-fluid">
     <div class="navbar-header">
       <div class="region region-navigation">
         <a class="logo navbar-btn pull-left" href="/" title="Címlap" rel="home">
-          <img src="/img/RG_0.png" alt="Címlap" />
+          <img src="{{ get_url(path='img/RG_0.png', cachebust=true) }}" alt="Címlap" />
         </a>
         <a class="name navbar-brand" href="/" title="Címlap" rel="home">RUSZKAI GÁBOR</a>
 
