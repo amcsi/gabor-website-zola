@@ -26,6 +26,7 @@ export async function forEachImages(cb: (item: ImageResource) => void) {
         }
       }
     `,
-    cb
+    cb,
+    'orderBy: createdAt_DESC',
   );
 }
