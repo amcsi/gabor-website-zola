@@ -7,11 +7,7 @@
     <h1 class="js-quickedit-page-title page-header"><span>Lady portret</span>
     </h1>
 
-    <article data-history-node-id="18" role="article" about="/node/18" class="grafika is-sticky full clearfix">
-
-
-
-
+    <article role="article" class="grafika is-sticky full clearfix">
 
       <div class="content">
 
@@ -20,12 +16,12 @@
         </div>
 
         <div class="container field field--name-body field--type-text-with-summary field--label-hidden field--item">
-          {{ page.content | safe }}
+          {{ page.extra.body | safe }}
         </div>
 
         <div class="field field--name-field-tipus- field--type-entity-reference field--label-above">
           <div class="field--label">Címke</div>
-          <div class="field--item"><a href="/grafika" hreflang="hu">TAXONOMY</a></div>
+          <div class="field--item"><a href="/grafika" hreflang="hu">{{ page.extra.taxonomy.name }}</a></div>
         </div>
 
       </div>

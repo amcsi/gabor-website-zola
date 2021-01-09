@@ -2,12 +2,13 @@ import { forEachImages } from '../api/iterateImages';
 import rimraf from 'rimraf';
 import path from 'path';
 import * as fs from 'fs';
-import { mkdirSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import TOML from '@iarna/toml';
 import { forEachPagesWithContent } from '../api/iteratePages';
 import { ImageResource, Menu, Page } from '../types';
 import { requestGraphQL } from '../api';
 import { createPageContent } from '../utils/toml';
+import { copySync } from 'fs-extra';
 
 let count = 0;
 
@@ -15,14 +16,15 @@ const projectBasePath = path.join(__dirname, '..', '..');
 
 const contentBasePath = path.join(projectBasePath, 'content');
 
+// Wipe out existing built content files.
 rimraf.sync(path.join(contentBasePath, '*'));
 
-const nodesDirectory = `${contentBasePath}/nodes`;
-mkdirSync(nodesDirectory);
+copySync(`${projectBasePath}/dist/content`, contentBasePath);
 
 (async () => {
   const promises = [];
 
+  // This configuration will be available on each .md page for Zola to access.
   const configExtras = {
     pages: [] as Page[],
     imagesById: {} as {[id: string]: ImageResource},
@@ -48,7 +50,7 @@ mkdirSync(nodesDirectory);
     }
     configExtras.imageIdsByTaxonomyId[imageResource.taxonomy.id].push(imageResource.id);
 
-    writeFileSync(`${nodesDirectory}/${imageResource.oldId}.md`, createPageContent({
+    writeFileSync(`${contentBasePath}/nodes/${imageResource.oldId}.md`, createPageContent({
       title: imageResource.name,
       template: 'image.html',
       extra: {
@@ -56,8 +58,9 @@ mkdirSync(nodesDirectory);
         image: { ...imageResource.image, alt: imageResource.alt },
         old_id: imageResource.oldId,
         taxonomy: imageResource.taxonomy,
+        body: imageResource.body,
       },
-    }, imageResource.body));
+    }));
 
     console.info(++count);
   }));

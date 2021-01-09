@@ -6,6 +6,6 @@ type ContentConfiguration = {
   extra?: JsonMap;
 }
 
-export function createPageContent(tomlConfiguration: ContentConfiguration, bodyContent: string) {
+export function createPageContent(tomlConfiguration: ContentConfiguration, bodyContent: string = '') {
   return ['+++', TOML.stringify(tomlConfiguration), '+++', bodyContent].join('\n')
 }
