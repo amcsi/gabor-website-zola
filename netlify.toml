@@ -17,19 +17,19 @@ ZOLA_VERSION = "0.12.0"
 #command = "zola build --base-url $DEPLOY_PRIME_URL"
 
 [[headers]]
-    for = "*.png"
-
-    [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-[[headers]]
-    for = "*.jpg"
-
-    [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-[[headers]]
     for = "*.ico"
 
     [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+    for = "/img/*"
+
+    [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+    for = "/*"
+
+    [headers.values]
+    Cache-Control = "public, max-age=3600"
