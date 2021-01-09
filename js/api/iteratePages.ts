@@ -1,5 +1,6 @@
 import { PageWithContent } from '../types';
 import { iterate } from './iterate';
+import { imageSelectables } from './selectables';
 
 export async function forEachPagesWithContent(cb: (item: PageWithContent) => void) {
   return iterate(
@@ -17,6 +18,9 @@ export async function forEachPagesWithContent(cb: (item: PageWithContent) => voi
               id
               name
             }
+          }
+          ... on Asset {
+            ${imageSelectables}
           }
         }
       }

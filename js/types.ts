@@ -3,12 +3,11 @@ export type Taxonomy = {
   name: string;
 }
 
-export type ImageAsset = {
+export type Asset = {
   height: number;
   fileName: string;
   width: number;
   url: string;
-  urlSmaller: string;
   id: string;
 }
 
@@ -19,7 +18,7 @@ export type ImageResource = {
   name: string;
   oldId: number | null;
   taxonomy: TaxonomyWithPage;
-  image: ImageAsset;
+  image: Asset;
 }
 
 export type Page = {
@@ -39,7 +38,7 @@ export type Gallery = {
 }
 
 export type PageWithContent = Page & {
-  content: Gallery[],
+  content: (Gallery | Asset)[],
 }
 
 export type Menu = {

@@ -2,8 +2,15 @@
 
 {% block content %}
 
+{# Different content types #}
+
 {% for content in page.extra.content %}
-{% include "gallery_single_taxonomy.html" %}
+  {% if content.url %}
+    {% include "content/content_image.html" %}
+  {% else %}
+    {% include "content/gallery.html" %}
+  {% endif %}
+
 {% endfor %}
 
 {% endblock content %}

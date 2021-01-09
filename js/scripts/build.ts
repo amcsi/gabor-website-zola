@@ -100,7 +100,8 @@ mkdirSync(nodesDirectory);
   ///////////////
 
   promises.push(forEachPagesWithContent(page => {
-    fs.writeFileSync(`${contentBasePath}/${page.slug}.md`, createPageContent({
+    const fileBaseName = page.slug || 'main';
+    fs.writeFileSync(`${contentBasePath}/${fileBaseName}.md`, createPageContent({
       title: page.name,
       template: 'page.html',
       extra: {
