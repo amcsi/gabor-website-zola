@@ -7,11 +7,10 @@
 
   <h2 class="block-title">Vedd fel velem a kapcsolatot</h2>
 
-
   <form
-    action="/kapcsolat"
-    method="post"
-    id="contact-message-feedback-form"
+    name="contact"
+    data-netlify="true"
+    method="POST"
     accept-charset="UTF-8"
   >
     <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-name js-form-item-name form-group">
@@ -44,7 +43,7 @@
         class="form-email required form-control"
         type="email"
         id="edit-mail"
-        name="mail"
+        name="email"
         value=""
         size="60"
         maxlength="254"
@@ -71,7 +70,7 @@
           data-drupal-selector="edit-subject-0-value"
           type="text"
           id="edit-subject-0-value"
-          name="subject[0][value]"
+          name="subject"
           value=""
           size="60"
           maxlength="100"
@@ -105,7 +104,7 @@
                     title=""
                     data-toggle="tooltip"
                     id="edit-message-0-value"
-                    name="message[0][value]"
+                    name="message"
                     rows="12"
                     cols="60"
                     placeholder=""
@@ -118,19 +117,6 @@
       </div>
 
     </div>
-    <input
-      data-drupal-selector="form-0jwpx1c2yaadavbtppz3czhj5fm7t1gtujmxj2cnyaa"
-      type="hidden"
-      name="form_build_id"
-      value="form-0JWpX1c2YAAdAvBTpPZ3CzhJ5Fm7T1GtujMxJ2CNYaA"
-      id="form-0JWpX1c2YAAdAvBTpPZ3CzhJ5Fm7T1GtujMxJ2CNYaA"
-    /><input
-    data-drupal-selector="edit-contact-message-feedback-form"
-    type="hidden"
-    name="form_id"
-    value="contact_message_feedback_form"
-    id="edit-contact-message-feedback-form"
-  />
     <div
       data-drupal-selector="edit-actions"
       class="form-actions form-group js-form-wrapper form-wrapper"
@@ -144,16 +130,6 @@
         name="op"
         value="Üzenet küldése"
       >Üzenet küldése
-      </button>
-      <button
-        data-drupal-selector="edit-preview"
-        class="button js-form-submit form-submit btn-default btn icon-before"
-        type="submit"
-        id="edit-preview"
-        name="op"
-        value="Előnézet"
-      ><span class="icon glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-        Előnézet
       </button>
     </div>
 
