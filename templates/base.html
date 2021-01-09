@@ -55,8 +55,25 @@
           <ul class="menu nav navbar-nav">
 
             {% for page in config.extra.pages %}
-            <li>
-              <a href="/{{ page.slug }}">{{ page.name }}</a>
+
+            {% if current_path is undefined %}
+              {% set currentPath = '404' %}
+            {% else %}
+              {% set currentPath = current_path %}
+            {% endif %}
+
+            {% set currentPath = currentPath | trim_end_matches(pat='/') | trim_start_matches(pat='/') %}
+
+            {% set isActive = page.slug == currentPath %}
+            {% set liClass = '' %}
+            {% set aClass = '' %}
+            {% if isActive %}
+              {% set liClass = 'active' %}
+              {% set aClass = 'is-active' %}
+            {% endif %}
+
+            <li class="{{ liClass }}">
+              <a href="/{{ page.slug }}" class="{{ aClass }}">{{ page.name }}</a>
             </li>
             {% endfor %}
             <li>
